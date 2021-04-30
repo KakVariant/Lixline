@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/image/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Lexline</title>
+</head>
+<body>
+    <header>
+        <ul class="pc-header">
+            <div class="container-custom">
+                <li><a href="#directions" class="lang_btn_1">О компании</a></li>
+                <li><a href="#" class="lang_btn_2">Блог</a></li>
+                <li><a href="#" class="lang_btn_3">Вакансии</a></li>
+                <li><a href="#" class="lang_btn_4">Контакты</a></li>
+                <form action="#" method="POST">
+                    <li class="search-li">
+                        <input class="search-inp lang_search" name="searchQuery" type="text" placeholder="Поиск товаров">
+                        <button class="btn-search" type="submit"><small><i class="fa fa-search search-icon" aria-hidden="true"></i></small></button>
+                    </li>
+                </form>
+                <li><div class="line-nav"></div></li>
+                <li>
+                    <div class="select-lang">
+                        <div id="text-lang">Ru</div>
+                        <div class="select-lang-list" id="select-lang-list">
+                            <a onclick="changeURL_ru()" id="lng-ru"><small>Ru</small></a>
+                            <a onclick="changeURL_ua()" id="lng-ua"><small>Ua</small></a>
+                            <a onclick="changeURL_en()" id="lng-en"><small>En</small></a>
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </ul>
+
+        <ul class="mobile-header">
+            <img src="./image/logo.png" alt="logo" class="logo-mobile">
+            <li class="burger-close-btn">
+                <a onclick="burger_tap()" class="mobile-burger">
+                    <div class="line-burger"></div>
+                    <div class="line-burger"></div>
+                    <div class="line-burger"></div>
+                </a>
+            </li>
+            <li>
+                <a class="search-mobile" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </li>
+            <li id="select-lang-mobile">
+                <div class="select-lang">
+                    <div id="text-lang-mobile">Ru</div>
+                    <div class="select-lang-list" id="select-lang-list">
+                        <a onclick="changeURL_ru()" id="lng-ru"><small>Ru</small></a>
+                        <a onclick="changeURL_ua()" id="lng-ua"><small>Ua</small></a>
+                        <a onclick="changeURL_en()" id="lng-en"><small>En</small></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="burger-menu">
+            <ul class="mobile-menu">
+                <li>
+                    <a href="#">
+                        <img src="./image/catalog-icon.svg" alt="catalog">
+                        <div class="lang_catalog">Каталог</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/custom-button-price.svg" alt="price">
+                        <div class="lang_price">Прайсы</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./image/certificate-icon.svg" alt="certificate">
+                        <div class="lang_certificate">Сертификаты</div>
+                    </a>
+                </li>
+                <hr />
+                <li>
+                    <a href="#" class="lang_btn_1">О компании</a>
+                </li>
+                <li>
+                    <a href="#" class="lang_services">Услуги</a>
+                </li>
+                <li>
+                    <a href="#" class="lang_btn_2">Блог</a>
+                </li>
+                <li>
+                    <a href="#" class="lang_btn_3">Вакансии</a>
+                </li>
+                <li>
+                    <a href="#" class="lang_btn_4">Контакты</a>
+                </li>
+                <hr />
+                <li>
+                    <div class="phone-number">
+                        <i class="fa fa-phone phone-icon" aria-hidden="true"></i>
+                        +38 (050) 400 07 70
+                    </div>
+                </li>
+                <li>
+                    <button class="btn-orange lang_call" data-toggle="modal" data-target="#exampleModal">Обратный звонок</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container-custom pc-sub-header">
+        <img src="./image/logo.png" alt="logo" class="logo">
+        <a href="#" class="button-catalog">
+            <img class="img-catalog" src="./image/custom-button.svg" alt="#">
+            <div class="text-catalog lang_catalog">Каталог</div>
+            
+            <!-- Начал делать вывод каталога, а потом заметил, что егоне не надо) Ну ладно, пускай уже будет) Жалко удалять проделаное) -->
+
+            <ul class="catalog-list">
+                <li class="li-catalog"><div class="text-fiting latun lang_menu_1">Фитинг латунный</div><i class="fa fa-chevron-right symvol-li" aria-hidden="true"></i></li>
+                <li class="li-catalog"><div class="text-fiting nikel lang_menu_2">Фитинг латунный никелированный</div><i class="fa fa-chevron-right symvol-li" aria-hidden="true"></i></li>
+                <li class="lang_menu_3">Спецзаказы</li>
+            </ul>
+        </a>
+
+        <div class="v-delimiter"></div>
+
+        <a href="#" class="button-price">
+            <img class="img-price" src="./image/custom-button-price.svg" alt="#">
+            <div class="text-price lang_price">Прайсы</div>
+        </a>
+
+        <div class="v-delimiter"></div>
+
+        <a href="#" class="custom-button lang_certificate">Сертификаты</a>
+
+        <div class="phone-number">
+            <i class="fa fa-phone phone-icon" aria-hidden="true"></i>
+            <b>+38 (050) 400 07 70</b>
+        </div>
+
+        <button class="btn-orange lang_call" data-toggle="modal" data-target="#exampleModal">Обратный звонок</button>
+    </div>
+
+    <div class="wrapper">
+        <div class="slider">
+            <div class="slider__item">
+                <div class="content-slide">
+                    <h2 class="title-slide lang_slide_title">Выгодные предложения от производителя!</h2>
+                    <a data-toggle="modal" data-target="#exampleModal" class="button-slide lang_slide_button">Оставить заявку</a>
+                </div>
+                <img src="./image/slide.png" alt="" class="slide-img">
+            </div>
+            <div class="slider__item">
+                <div class="content-slide">
+                    <h2 class="title-slide lang_slide_title">Выгодные предложения от производителя!</h2>
+                    <a data-toggle="modal" data-target="#exampleModal" class="button-slide lang_slide_button">Оставить заявку</a>
+                </div>
+                <img src="./image/slide.png" alt="" class="slide-img">
+            </div>
+            <div class="slider__item">
+                <div class="content-slide">
+                    <h2 class="title-slide lang_slide_title">Выгодные предложения от производителя!</h2>
+                    <a data-toggle="modal" data-target="#exampleModal" class="button-slide lang_slide_button">Оставить заявку</a>
+                </div>
+                <img src="./image/slide.png" alt="" class="slide-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="title-block">
+            <div class="title">
+                <div class="lang_title_product">Наша Продукция</div> 
+                <div class="title-row"></div>
+            </div>
+        </div>
+        <div class="container-custom">
+            <div class="сategory-block">
+                <a class="block-1" href="#">
+                    <h6 class="block__title lang_menu_1">Фитинг латунные</h6>
+                </a>
+                <a class="block-2" href="#">
+                    <h6 class="block__title lang_menu_2">Фитинг латунные никелированне</h6>
+                </a>
+                <a class="block-3" href="#">
+                    <h6 class="block__title lang_menu_3">Спецзаказы</h6>
+                    <div class="gradient"></div>
+                </a>
+                <a class="block-3-mobile" href="#">
+                    <h6 class="block__title lang_menu_3">Спецзаказы</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper directions-wrapper">
+        <div class="title-block">
+            <div class="title" id="directions">
+                <div class="lang_directions_title">Направления с которыми мы работаем</div>
+                <div class="title-row"></div>
+            </div>
+        </div>
+        <div class="directions-container">
+            <div class="directions-cards">
+                <img src="./image/directions-1.svg" alt="directions-1">
+                <div class="content-directions">
+                    <div class="number-directions">01</div>
+                    <div class="text-directions lang_directions_1">Торговые компании</div>
+                </div>
+            </div>
+            <div class="directions-cards">
+                <img src="./image/directions-2.svg" alt="directions-2">
+                <div class="content-directions">
+                    <div class="number-directions">02</div>
+                    <div class="text-directions lang_directions_2">Промышленные предприятия</div>
+                </div>
+            </div>
+            <div class="directions-cards">
+                <img src="./image/directions-3.svg" alt="directions-3">
+                <div class="content-directions">
+                    <div class="number-directions">03</div>
+                    <div class="text-directions lang_directions_3">Производители пожарного обородования</div>
+                </div>
+            </div>
+            <div class="directions-cards">
+                <img src="./image/directions-4.svg" alt="directions-4">
+                <div class="content-directions">
+                    <div class="number-directions">04</div>
+                    <div class="text-directions lang_directions_4">Агропромышленный комплекс</div>
+                </div>
+            </div>
+            <div class="directions-cards">
+                <img src="./image/directions-5.svg" alt="directions-5">
+                <div class="content-directions">
+                    <div class="number-directions">05</div>
+                    <div class="text-directions lang_directions_5">Строительно-монтажные организации</div>
+                </div>
+            </div>
+            <div class="directions-cards">
+                <img src="./image/directions-6.svg" alt="directions-6">
+                <div class="content-directions">
+                    <div class="number-directions">06</div>
+                    <div class="text-directions lang_directions_6">Украинская железная дорога</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title lang_call" id="exampleModalLabel">Обратный звонок</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="POST">
+                    <label for="fio" class="lang_FIO">ФИО:</label>
+                    <input type="text" class="form-control lang_FIO_place" id="fio" placeholder="Как к Вам обращаться?" required>
+                    <br />
+                    <label for="number" class="lang_phone_number">Номер телефона:</label>
+                    <input type="text" class="form-control" id="number" maxlength="19" placeholder="+38 (123) 456 78 90" required>
+            </div>
+            <div class="modal-footer">
+            <button type="submit" class="btn btn-warning lang_call_me">Связаться со мной</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        const langArr = {
+            "btn_1" : {
+                "en": "About company",
+                "ru": "О компании",
+                "ua": "Про компанію",
+            },
+            "btn_2" : {
+                "en": "Blog",
+                "ru": "Блог",
+                "ua": "Блог",
+            },
+            "btn_3" : {
+                "en": "Vacancies",
+                "ru": "Вакансии",
+                "ua": "Вакансії",
+            },
+            "btn_4" : {
+                "en": "Contacts",
+                "ru": "Контакты",
+                "ua": "Контакти",
+            },
+            "search" : {
+                "en": "Product search",
+                "ru": "Поиск товаров",
+                "ua": "Пошук товарів",
+            },
+            "catalog" : {
+                "en": "Catalog",
+                "ru": "Каталог",
+                "ua": "Каталог",
+            },
+            "price" : {
+                "en": "Price",
+                "ru": "Прайсы",
+                "ua": "Ціни",
+            },
+            "certificate" : {
+                "en": "Certificate",
+                "ru": "Сертификаты",
+                "ua": "Сертифікати",
+            },
+            "call" : {
+                "en": "Back call",
+                "ru": "Обратный звонок",
+                "ua": "Зателефонуйте мені",
+            },
+            "services" : {
+                "en": "Services",
+                "ru": "Услуги",
+                "ua": "Послуги",
+            },
+            "menu_1" : {
+                "en": "Brass fitting",
+                "ru": "Фитинг латунный",
+                "ua": "Фітинг латунний",
+            },
+            "menu_2" : {
+                "en": "Brass nickel-plated fitting",
+                "ru": "Фитинг латунный никелированный",
+                "ua": "Фітинг латунний нікельований",
+            },
+            "menu_3" : {
+                "en": "Special orders",
+                "ru": "Спецзаказы",
+                "ua": "Спецзамовлення",
+            },
+            "FIO" : {
+                "en": "FIO:",
+                "ru": "ФИО:",
+                "ua": "ПІБ:",
+            },
+            "FIO_place" : {
+                "en": "How can I call you?",
+                "ru": "Как к Вам обращаться?",
+                "ua": "Як до Вас звертатися?",
+            },
+            "phone_number" : {
+                "en": "Phone number:",
+                "ru": "Номер телефона:",
+                "ua": "Номер телефону:",
+            },
+            "call_me" : {
+                "en": "Contact with me",
+                "ru": "Связаться со мной",
+                "ua": "Зв'язатися зі мною",
+            },
+            "slide_button" : {
+                "en": "Submit your application",
+                "ru": "Оставить заявку",
+                "ua": "Залишити заявку",
+            },
+            "slide_title" : {
+                "en": "Favorable offers from the manufacturer!",
+                "ru": "Выгодные предложения от производителя!",
+                "ua": "Вигідні пропозиції від виробника!",
+            },
+            "title_product" : {
+                "en": "Our production",
+                "ru": "Наша продукция",
+                "ua": "Наша продукція",
+            },
+            "directions_title" : {
+                "en": "DIRECTIONS WE WORK WITH",
+                "ru": "НАПРАВЛЕНИЯ С КОТОРЫМИ МЫ РАБОТАЕМ",
+                "ua": "НАПРЯМКИ З ЯКИМИ МИ ПРАЦЮЄМО",
+            },
+            "directions_1" : {
+                "en": "Trading companies",
+                "ru": "Торговые компании",
+                "ua": "Торгові компанії",
+            },
+            "directions_2" : {
+                "en": "Industrial enterprises",
+                "ru": "Промышленные предприятия",
+                "ua": "Промислові підприємства",
+            },
+            "directions_3" : {
+                "en": "Fire fighting equipment manufacturers",
+                "ru": "Производители пожарного обородования",
+                "ua": "Виробники пожежного забезпечення",
+            },
+            "directions_4" : {
+                "en": "Agro-industrial complex",
+                "ru": "Агропромышленный комплекс",
+                "ua": "Агропромисловий комплекс",
+            },
+            "directions_5" : {
+                "en": "Construction and installation organizations",
+                "ru": "Строительно-монтажные организации",
+                "ua": "Будівельно-монтажні організації",
+            },
+            "directions_6" : {
+                "en": "Ukrainian railway",
+                "ru": "Украинская железная дорога",
+                "ua": "Українська залізниця",
+            },
+        };
+    </script>
+    <script src="js/lang.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
